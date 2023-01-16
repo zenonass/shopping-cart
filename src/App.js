@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Products from "./components/Products";
+import Homepage from "./components/Homepage";
+import Navbar from "./components/Navbar";
+import './components/Common.css'
+import Footer from "./components/Footer";
+import useFetch from './components/useFetch.js'
+import React, { useState } from 'react';
+import { UserContext } from "./components/UserContext";
 
 function App() {
+  const {data: products, isPending} = useFetch('http://localhost:8000/products');
+  const [cartQuantity, setCartQuantity] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{cartQuantity, setCartQuantity}}>
+      <Navbar />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/products" element={products && <Products products={products} />} >                
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      <Footer />
+    </UserContext.Provider>
   );
 }
 

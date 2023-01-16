@@ -1,0 +1,46 @@
+﻿{
+    "products": [
+      {
+        "name": "Blueberries",
+        "price": "10",
+        "image": "../images/blueberries.jpg",
+        "id": 1
+      },
+      {
+        "name": "Avocado",
+        "price": "30",
+        "image": "../images/avocado.jpg",
+        "id": 2
+      },
+      {
+        "name": "Strawberries",
+        "price": "15",
+        "image": "../images/strawberries.jpg",
+        "id": 3
+      },
+      {
+        "name": "Apples",
+        "price": "15",
+        "image": "../images/apples.jpg",
+        "id": 4
+      },
+      {
+        "name": "Grapes",
+        "price": "20",
+        "image": "../images/grapes.jpg",
+        "id": 5
+      },
+      {
+        "name": "Pineapple",
+        "price": "30",
+        "image": "../images/pineapple.jpg",
+        "id": 6
+      },
+      {
+        "name": "Orange",
+        "price": "28",
+        "image": "../images/orange.jpg",
+        "id": 7
+      }
+    ]
+  }
